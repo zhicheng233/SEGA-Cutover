@@ -1,0 +1,24 @@
+{
+  "Listen": "0.0.0.0",
+  "Port": 8088,
+  "Password":"1234",
+  "NextStart": "sgxmasterO.exe",
+  "target":"SDGB",
+  "SDGB":{
+    "IsVHD":true,
+    "IsOriginal":false,
+    "TargetDiskPath":"E:\\SDGB1.55\\internal_0.vhd",
+    "IsPassSEGAPxGetHw":true,
+    "TargetGameRunPath":"H:\\game.bat",
+    "TargetConfigPath":"Y:\\SDGB\\MikuNET"
+  },
+  "SDEZ":{
+    "IsOriginal":true,
+    "IsVHD":false,
+    "TargetDiskPath":"F://test.vhd",
+    "IsPassSEGAPxGetHw":true,
+    "TargetGameRunPath":"X:\\game.bat",
+    "TargetConfigPath":"Y:\\SDEZ\\MikuNET"
+  }
+}
+  

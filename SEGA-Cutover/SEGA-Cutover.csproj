@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+
+        <TargetFramework>net472</TargetFramework>
+
+        <UseWPF>true</UseWPF>
+
+        <Nullable>enable</Nullable>
+
+        <LangVersion>latest</LangVersion>
+
+        <Version>0.1.0</Version>
+        <Authors>ZCROM | MikuNET</Authors>
+        <Copyright>MikuNET</Copyright>
+        <Company>ZCROM | MikuNET</Company>
+        <Product>MikuNET</Product>
+
+        <PackageId>SEGA_Cutover</PackageId>
+        <AssemblyName>SEGA_Cutover</AssemblyName>
+        <RootNamespace>SEGA_Cutover</RootNamespace>
+    </PropertyGroup>
+
+
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <PlatformTarget>x64</PlatformTarget>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <Resource Include="res\MapleMonoNormal-NF-CN-Medium.ttf" />
+        <Resource Include="res\JetBrainsMonoNL-Bold.ttf" />
+        <Resource Include="res\JetBrainsMonoNL-ExtraLight.ttf" />
+        <Resource Include="res\JetBrainsMonoNL-Medium.ttf" />
+        <Resource Include="res\mikunet.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="Costura.Fody" Version="6.2.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="HidSharp" Version="2.6.4" />
+
+        <PackageReference Include="PortableCostura.Fody" Version="6.0.2">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+
+        <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <None Include="config.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+</Project>

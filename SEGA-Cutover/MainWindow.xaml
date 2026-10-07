@@ -1,0 +1,65 @@
+﻿<Window x:Class="SEGA_Cutover.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SEGA_Cutover"
+        mc:Ignorable="d"
+        Background="#000000"
+        
+        Title="MainWindow"
+        Height="1920"
+        Width="1080"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowState="Maximized"
+        Topmost="True"
+        
+        PreviewKeyDown="Window_PreviewKeyDown"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*" />
+            <ColumnDefinition Width="0.4*" />
+            <ColumnDefinition Width="0.3*" />
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="1"  Source="res/mikunet.png" VerticalAlignment="Top" />
+        <Grid Grid.Column="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*" />
+                <RowDefinition Height="0.15*" />
+                <RowDefinition Height="0.4*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="0.2*" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="请选择要切换的盘" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="25" FontFamily="res/#Maple Mono Normal NF CN" />
+                <Grid Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!-- Keep the prefix out of the centered disk column's measured width. -->
+                    <Canvas x:Name="CursorCanvas" Grid.Row="4" Width="0" Height="{Binding ActualHeight, ElementName=DiskLabel1}" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Label Canvas.Right="0" Content=">" Foreground="White" FontSize="20" FontFamily="res/#JetBrains Mono NL ExtraLight" />
+                    </Canvas>
+                    <Label x:Name="DiskLabel1" Grid.Row="0" Content="SDGB" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontSize="20" FontFamily="res/#JetBrains Mono NL ExtraLight"/>
+                    <Label x:Name="DiskLabel2" Grid.Row="1" Content="SDEZ" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontSize="20" FontFamily="res/#JetBrains Mono NL ExtraLight"/>
+                    <Label x:Name="DiskLabel3" Grid.Row="2" Content="SDGA" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontSize="20" FontFamily="res/#JetBrains Mono NL ExtraLight"/>
+                    <Label x:Name="DiskLabel4" Grid.Row="3" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontSize="20" />
+                    <Label x:Name="DiskLabel5" Grid.Row="4" Content="确定" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontSize="22" FontFamily="res/#Maple Mono Normal NF CN Medium"/>
+                </Grid>
+            </Grid>
+           
+        </Grid>
+        
+    </Grid>
+</Window>
